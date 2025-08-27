@@ -360,4 +360,31 @@ Selamat ulang tahun, Sayangku. Semoga tahun ini bawa banyak kebaikan buatmu dan 
       if(sections.includes(id)) show(id);
     }
   </script></body>
+  <!-- HTML utama kamu tetap di sini -->
+<!-- ... semua section dan konten ... -->
+
+<!-- Tambahkan ini di akhir file HTML, sebelum </body> -->
+<style>
+  /* Tombol Back selalu di atas */
+  #words .nav {
+      position: relative;
+      z-index: 10;
+      margin-top: 16px;
+  }
+</style>
+
+<script>
+  // Scroll ke atas tiap kali pindah section
+  document.querySelectorAll('[data-go]').forEach(link => {
+      link.addEventListener('click', () => {
+          const targetId = link.getAttribute('href').replace('#', '');
+          const targetSection = document.getElementById(targetId);
+          if(targetSection) {
+              targetSection.scrollTop = 0; 
+              window.scrollTo({ top: 0, behavior: 'smooth' }); 
+          }
+      });
+  });
+</script>
+</body>
 </html>

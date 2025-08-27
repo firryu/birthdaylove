@@ -359,32 +359,11 @@ Selamat ulang tahun, Sayangku. Semoga tahun ini bawa banyak kebaikan buatmu dan 
       const id = location.hash.replace('#','');
       if(sections.includes(id)) show(id);
     }
-  </script></body>
-  <!-- HTML utama kamu tetap di sini -->
-<!-- ... semua section dan konten ... -->
-
-<!-- Tambahkan ini di akhir file HTML, sebelum </body> -->
-<style>
-  /* Tombol Back selalu di atas */
-  #words .nav {
-      position: relative;
-      z-index: 10;
-      margin-top: 16px;
-  }
+    <style>
+/* Biar ada jarak kosong di bawah section Words */
+#words {
+    padding-bottom: 100px; /* sesuaikan angka ini sama tinggi audio playermu */
+}
 </style>
-
-<script>
-  // Scroll ke atas tiap kali pindah section
-  document.querySelectorAll('[data-go]').forEach(link => {
-      link.addEventListener('click', () => {
-          const targetId = link.getAttribute('href').replace('#', '');
-          const targetSection = document.getElementById(targetId);
-          if(targetSection) {
-              targetSection.scrollTop = 0; 
-              window.scrollTo({ top: 0, behavior: 'smooth' }); 
-          }
-      });
-  });
-</script>
-</body>
+  </script></body>
 </html>

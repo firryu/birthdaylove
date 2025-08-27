@@ -195,10 +195,15 @@ const countdownDate = new Date("August 29, 2025 08:30:00 GMT+0700").getTime();
 // Fungsi buat update countdown
 function startCountdown(container) {
     const countdownEl = document.createElement("div");
+    countdownEl.id = "countdown";
     countdownEl.style.fontSize = "18px";
     countdownEl.style.textAlign = "center";
-    countdownEl.style.margin = "12px 0";
-    container.prepend(countdownEl); // letakkan di atas konten section
+    countdownEl.style.margin = "8px 0 12px 0";
+    countdownEl.style.color = "#ff77aa"; // pink soft biar matching tema
+
+    // Sisipkan countdown setelah h2
+    const h2 = container.querySelector("h2");
+    if (h2) h2.insertAdjacentElement("afterend", countdownEl);
 
     const interval = setInterval(() => {
         const now = new Date().getTime();
@@ -229,7 +234,6 @@ document.querySelectorAll('a[href="#moments"]').forEach(link => {
     });
 });
 </script>
-    </div>
     <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
   </div>
 </section>
@@ -359,11 +363,5 @@ Selamat ulang tahun, Sayangku. Semoga tahun ini bawa banyak kebaikan buatmu dan 
       const id = location.hash.replace('#','');
       if(sections.includes(id)) show(id);
     }
-  </script>
-    <style>
-/* Biar ada jarak kosong di bawah section Words */
-#words {
-    padding-bottom: 100px; /* sesuaikan angka ini sama tinggi audio playermu */
-}
-</style></body>
+  </script></body>
 </html>

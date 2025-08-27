@@ -198,7 +198,7 @@ section[hidden]{display:none}
     countdownEl.style.textAlign = "center";
     countdownEl.style.margin = "12px 0";
     countdownEl.id = "countdown";
-    document.body.insertBefore(countdownEl, document.body.firstChild); // letakkan di atas halaman
+    document.body.insertBefore(countdownEl, document.body.firstChild); // letakkan di moments in time
 
     // Update countdown setiap detik
     const interval = setInterval(() => {
@@ -219,6 +219,9 @@ section[hidden]{display:none}
     countdownEl.innerHTML = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
     </script>
+    </div>
+    <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
+  </div>
 </section>
 
 <!-- Section: Words From My Heart -->
